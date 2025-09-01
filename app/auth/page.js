@@ -9,9 +9,9 @@ function Login() {
   // use to signin with google
   const signInWithGoogle = async () => {
     const { error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options:{
-        redirectTo:'https://interview-u-nex.vercel.app/'
+       options: {
+        // 👇 Automatically picks localhost or Vercel domain
+        redirectTo: `${window.location.origin}/dashboard` 
       }
     });
     if(error){
