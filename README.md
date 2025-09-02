@@ -48,8 +48,6 @@ interviewUNex is an intelligent AI-powered voice assistant designed to revolutio
 
 **Clone the repository**
 ```bash
-git clone https://github.com/HarshTanwar143/AiCruiter---AI-Voice-Assistant-For-Interviews.git
-cd AiCruiter---AI-Voice-Assistant-For-Interviews
 
 
 npm install
