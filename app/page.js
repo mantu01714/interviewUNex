@@ -88,9 +88,6 @@ export default function Home() {
                 height={100}
                 className="h-12 w-auto"
               />
-              {/* <span className="text-xl font-bold text-white tracking-wide">
-                interviewUNex
-              </span> */}
             </div>
 
             {/* Mobile Menu Button */}
@@ -125,6 +122,19 @@ export default function Home() {
                   <Button onClick={goToDashboard} variant="secondary" size="sm">
                     Dashboard
                   </Button>
+
+                  {/* Apply Job Button */}
+                  <a
+                    href="https://hire-u-nex-client.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded-lg bg-gradient-to-r from-green-400 via-green-500 to-green-600 
+                               text-white text-sm font-medium shadow-md hover:shadow-lg hover:scale-105 
+                               transition-all duration-300"
+                  >
+                    Apply Job
+                  </a>
+
                   <Button onClick={signOut} variant="ghost" size="sm" className="text-white">
                     Sign Out
                   </Button>
@@ -158,6 +168,19 @@ export default function Home() {
                   <Button onClick={goToDashboard} className="w-full bg-pink-600 hover:bg-pink-700">
                     Dashboard
                   </Button>
+
+                  {/* Apply Job Button (Mobile) */}
+                  <a
+                    href="https://hire-u-nex-client.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full text-center px-4 py-2 rounded-lg bg-gradient-to-r from-green-400 via-green-500 to-green-600 
+                               text-white font-medium shadow-md hover:shadow-lg hover:scale-105 
+                               transition-all duration-300"
+                  >
+                    Apply Job
+                  </a>
+
                   <Button onClick={signOut} variant="ghost" className="w-full text-white">
                     Sign Out
                   </Button>
@@ -205,14 +228,13 @@ export default function Home() {
                 Start Practicing
               </Button>
               <Button
-  variant="outline"
-  size="lg"
-  className="px-8 py-4 text-lg rounded-xl bg-white text-black font-medium shadow-md 
-             hover:bg-transparent hover:text-white hover:border-white transition-all duration-300"
->
-  Learn More
-</Button>
-
+                variant="outline"
+                size="lg"
+                className="px-8 py-4 text-lg rounded-xl bg-white text-black font-medium shadow-md 
+                           hover:bg-transparent hover:text-white hover:border-white transition-all duration-300"
+              >
+                Learn More
+              </Button>
             </>
           )}
         </div>
