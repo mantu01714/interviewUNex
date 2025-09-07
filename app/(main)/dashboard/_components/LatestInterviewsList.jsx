@@ -6,13 +6,24 @@ import { Camera, Video } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import InterviewCard from "./InterviewCard";
 import { toast } from "sonner";
+import { useRouter } from 'next/navigation';
 
 function LatestInterviewsList() {
   const [interviewList, setInterviewList] = useState([]);
   const { user } = useUser();
+  const router = useRouter();
   useEffect(() => {
     user && GetInterviewList();
   }, [user]);
+
+  const handleInterview = () => {
+        if(!user?.credits || user?.credits < 1){
+            toast.error("You don't have enough credits! Purchase our plan to create interviews.");
+            router.push('/billing');
+        }else{
+            router.push('/dashboard/create-interview');
+        }
+    }
 
   const GetInterviewList = async () => {
     let { data: Interviews, error } = await supabase
