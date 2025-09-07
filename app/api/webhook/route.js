@@ -121,11 +121,11 @@ export async function POST(req) {
           const plan = PricingPlan.find(p => p.priceId === priceId);
           
           if (plan && invoice.customer_email) {
-            // console.log(`Processing subscription renewal for ${invoice.customer_email}`);
+            // console.log(`Processing subscription renewal for ${invoice.customer_email}`);---------------------------------
             
             // Get current user data
             const { data: userData, error: fetchError } = await supabase
-              .from('User')
+              .from('Users')
               .select('credits')
               .eq('email', invoice.customer_email)
               .single();
@@ -134,9 +134,9 @@ export async function POST(req) {
               const currentCredits = userData.credits || 0;
               const newCredits = currentCredits + plan.credits;
 
-              // Update credits for subscription renewal
+              // Update credits for subscription renewal-------------------------------------
               const { data, error } = await supabase
-                .from('User')
+                .from('Users')
                 .update({ credits: newCredits })
                 .eq('email', invoice.customer_email)
                 .select();
